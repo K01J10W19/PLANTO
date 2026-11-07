@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@import './motion.css' layer(base);
+
+/* ─── Planto design tokens ─────────────────────────────────────────────
+ * Spacing: 8px grid. Use even Tailwind steps only (2=8px, 4=16px, 6=24px,
+ * 8=32px, 12=48px, 16=64px, 24=96px…). Fluid type via clamp().
+ * Contrast (on forest-900 #1A2117): ink 15.6:1 · ink-muted 10.4:1 · ink-subtle 5.7:1
+ * ──────────────────────────────────────────────────────────────────── */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;  /* tablet */
+  --breakpoint-lg: 1024px; /* laptop */
+  --breakpoint-xl: 1440px; /* monitor */
+
+  --color-forest-950: #11160F;
+  --color-forest-900: #1A2117;
+  --color-forest-850: #1F271C;
+  --color-forest-800: #252E21;
+  --color-forest-700: #303B2B;
+  --color-forest-600: #3E4B37;
+
+  --color-leaf-300: #A9D18E;
+  --color-leaf-400: #86B96B;
+  --color-leaf-500: #5E9445;
+
+  --color-sun-400: #F2C94C;
+
+  --color-ink: #F3F5EF;
+  --color-ink-muted: #C2C9BA;
+  --color-ink-subtle: #8E9786;
+
+  --font-sans: Manrope, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Manrope, ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: clamp(2.75rem, 1.6rem + 4.2vw, 5rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+  --text-h2: clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 600;
+  --text-h3: clamp(1.25rem, 1.05rem + 0.7vw, 1.75rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--font-weight: 600;
+  --text-h4: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
+  --text-h4--line-height: 1.4;
+  --text-h4--font-weight: 500;
+  --text-body-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-body-lg--line-height: 1.6;
+  --text-body: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-body--line-height: 1.6;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+  --text-overline: 0.75rem;
+  --text-overline--line-height: 1.4;
+  --text-overline--letter-spacing: 0.08em;
+
+  --radius-card: 32px;
+  --radius-panel: 48px;
+
+  --shadow-glass: 0 24px 64px -24px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-lift: 0 32px 80px -24px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  /* v4 resets buttons to the default cursor; keep the v3 pointer behaviour */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
